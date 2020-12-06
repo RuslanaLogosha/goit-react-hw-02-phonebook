@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
-
+import './form.scss';
 
 
 class ContactForm extends Component {
@@ -32,13 +32,17 @@ class ContactForm extends Component {
     })
   } 
 
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>
+      <form
+        className='form'
+        onSubmit={this.handleSubmit}>
+        <label
+          className='label'
+          htmlFor={this.nameInputId}>
           Name
-          <input
+          <input 
+            className = 'input'
             type="text"
             name="name"
             value={this.state.name}
@@ -46,9 +50,12 @@ class ContactForm extends Component {
             id={this.nameInputId}
           />
         </label>
-        <label htmlFor={this.numberInputId}>
+        <label
+          className='label'      
+          htmlFor={this.numberInputId}>
           Number
           <input
+            className ='input'
             type="text"
             name="number"
             value={this.state.number}
@@ -57,12 +64,15 @@ class ContactForm extends Component {
           />
         </label>
 
-        <button type="submit">
+        <button
+          className='button'
+          type="submit">
           Add contact
         </button>
       </form>
     )
   }
 }
+
 
 export default ContactForm;
